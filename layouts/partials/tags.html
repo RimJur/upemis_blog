@@ -1,0 +1,5 @@
+<div class="tags-list">
+    {{ with .Params.tags }} {{ range . }} {{ $href := print (relURL "tags/") (urlize .) }}
+    <a href="{{ $href }}" class="tags-single">{{ . }}</a>
+    {{ end }} {{ end }}
+</div>

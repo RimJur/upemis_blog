@@ -1,0 +1,5 @@
+<nav id="top-navigation">
+    {{ range .Site.Menus.main }} {{ $text := print .Name }}
+    <a href="{{ .URL }}">{{ $text }}</a>
+    {{ end }}
+</nav>

@@ -1,0 +1,11 @@
+{{ define "main" }}
+
+<h1>{{ .Title }}</h1>
+{{ range .Pages.ByPublishDate.Reverse }}
+<div class="posts-single">
+    {{ partial "tags.html" . }}
+    <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+    <!-- Description TODO -->
+    {{ partial "author-and-date.html" . }}
+</div>
+{{ end }} {{ end }}

@@ -1,0 +1,38 @@
+baseURL = 'https://upemis.lt/tinklarastis'
+languageCode = 'lt-LT'
+defaultContentLanguage = 'lt'
+
+[permalinks]
+post = '/:slug/'
+tags = '/tags/:slug/'
+
+[params]
+dateFormat = 'Jan 2, 2006'
+homeText = 'Viskas, kas susiję su baidarėmis, upėmis, keliavimu ir aktyviu laisvalaikiu.'
+
+[taxonomies]
+tag = 'tags'
+author = 'authors'
+
+[languages]
+[languages.lt]
+title = 'Upemis.lt tinklaraštis'
+weight = 0
+languageName = 'Lietuvių'
+
+[[languages.lt.menu.main]]
+name = "Maršrutai"
+url = "https://upemis.lt/marsrutai"
+weight = 1
+[[languages.lt.menu.main]]
+name = "Upės"
+url = "https://upemis.lt/upes"
+weight = 2
+[[languages.lt.menu.main]]
+name = "Tinklaraštis"
+url = "/"
+weight = 3
+[[languages.lt.menu.main]]
+name = "Žymės"
+url = "/tags/"
+weight = 4
