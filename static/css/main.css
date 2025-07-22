@@ -1,5 +1,56 @@
+:root {
+    --background: hsl(0 0% 100%);
+    --foreground: hsl(222.2 84% 4.9%);
+    --muted: hsl(210 26.4% 83.5%);
+    --muted-foreground: hsl(215.4 16.3% 46.9%);
+    --popover: hsl(0 0% 100%);
+    --popover-foreground: hsl(222.2 84% 4.9%);
+    --card: hsl(0 0% 100%);
+    --card-foreground: hsl(222.2 84% 4.9%);
+    --border: hsl(216 16% 63.4%);
+    --input: hsl(214.3 31.8% 91.4%);
+    --primary: hsl(221.2 83.2% 53.3%);
+    --primary-foreground: hsl(210 40% 98%);
+    --secondary: hsl(210 40% 96.1%);
+    --secondary-foreground: hsl(222.2 47.4% 11.2%);
+    --accent: hsl(210 40% 96.1%);
+    --accent-foreground: hsl(222.2 47.4% 11.2%);
+    --destructive: hsl(0 84.2% 60.2%);
+    --destructive-foreground: hsl(210 40% 98%);
+    --ring: hsl(221.2 83.2% 53.3%);
+    --radius: 0.5rem;
+}
+.dark {
+    --background: hsl(222.2 84% 4.9%);
+    --foreground: hsl(210 40% 98%);
+    --muted: hsl(217.2 32.6% 17.5%);
+    --muted-foreground: hsl(215 20.2% 65.1%);
+    --popover: hsl(222.2 84% 4.9%);
+    --popover-foreground: hsl(210 40% 98%);
+    --card: hsl(222.2 84% 4.9%);
+    --card-foreground: hsl(210 40% 98%);
+    --border: hsl(217.2 32.6% 17.5%);
+    --input: hsl(217.2 32.6% 17.5%);
+    --primary: hsl(217.2 91.2% 59.8%);
+    --primary-foreground: hsl(222.2 47.4% 11.2%);
+    --secondary: hsl(217.2 32.6% 17.5%);
+    --secondary-foreground: hsl(210 40% 98%);
+    --accent: hsl(217.2 32.6% 17.5%);
+    --accent-foreground: hsl(210 40% 98%);
+    --destructive: hsl(0 62.8% 30.6%);
+    --destructive-foreground: hsl(210 40% 98%);
+    --ring: hsl(224.3 76.3% 48%);
+    --radius: 0.5rem;
+}
+
+* {
+    border-color: var(--border);
+}
+
 body {
-    padding: 10px 20px 0px 20px;
+    color: var(--foreground);
+    background-color: var(--background);
+    padding: 0.6rem 1rem 0rem 1rem;
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -11,60 +62,106 @@ h1 {
     width: 100%;
 }
 
+.primary-heading {
+    font-size: 2rem;
+    color: var(--primary);
+    text-decoration: none;
+    transition-property: opacity;
+    transition-duration: 200ms;
+    transition-timing-function: ease-in-out;
+}
+
+.primary-heading:hover {
+    opacity: 0.8;
+}
+
 #top-navigation {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 0.6rem;
 }
 
-#main {
-    max-width: 700px;
-    width: 100%;
+/* Content */
+
+.content-container {
+    width: min(100%, 800px);
+    margin: 0 auto;
 }
 
-.posts-single {
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 3px;
-}
-
-.posts-single h2 {
-    margin: 0;
-}
+/* Tags */
 
 .tags-list {
     display: flex;
     align-items: center;
     justify-content: start;
-    gap: 8px;
+    gap: 0.8rem;
 }
 
 .tags-single {
-    padding: 4px 8px;
-    border-radius: 4px;
-    background-color: #f0f0f0;
-    color: #333;
+    color: var(--foreground);
+    font-size: 0.8rem;
+    font-weight: 600;
     text-decoration: none;
+    transition-property: color;
 }
 
 .tags-single:hover {
-    background-color: #e0e0e0;
-    color: #555;
+    color: var(--primary);
 }
 
+/* Author */
+
 .author-image {
-    width: 32px;
-    height: 32px;
+    width: 2rem;
+    height: 2rem;
     border-radius: 50%;
     object-fit: cover;
+}
+
+.author-image-container {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+    text-decoration: none;
+    color: var(--foreground);
+    transition-property: all;
+}
+
+.author-image-container:hover {
+    color: var(--primary);
+    text-decoration: underline;
 }
 
 .author-line {
     display: flex;
     align-items: center;
     justify-content: start;
-    gap: 6px;
+    gap: 0.5em;
+}
+
+/* Posts */
+
+.posts-single {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.posts-single h2 {
+    margin-top: 0;
+    margin-bottom: 0.4rem;
+}
+
+.posts-list {
+    width: min(100%, 50rem);
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+@media (min-width: 768px) {
+    .posts-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 }

@@ -2,12 +2,15 @@
     {{ if .Params.authors }}
         {{ $path := printf "%s/%s" "authors" ((index .Params.authors 0) | urlize) }}
         {{ with $.Site.GetPage $path }}
-        <a class="author-image" href="{{ .Params.link }}">
+        <a class="author-image-container" href="{{ .Params.link }}">
             <img src="/tinklarastis/img/{{ $path }}.webp" alt="{{ .Params.name }} autoriaus nuotrauka" class="author-image" />
+            <span>{{ .Params.name }}</span>
         </a>
-        <span>{{ .Params.name }}</span>
         {{ end }}
     {{ end }}
-    {{ $dateTime := .PublishDate.Format "2006-01-02" }} {{ $dateFormat := .Site.Params.dateFormat | default "Jan 2, 2006" }}
-    <time datetime="{{ $dateTime }}">{{ .PublishDate.Format $dateFormat }}</time>
+    {{ $dateTime := .PublishDate.Format "2006-01-02" }}
+    <time
+        datetime="{{ .PublishDate.Format "2006-01-02" }}"
+        style="padding-left: 0.6rem;"
+    >{{ .PublishDate | time.Format ":date_long" }}</time>
 </div>

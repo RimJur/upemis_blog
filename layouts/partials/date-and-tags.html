@@ -1,7 +1,7 @@
 {{ $dateTime := .PublishDate.Format "2006-01-02" }} {{ $dateFormat := .Site.Params.dateFormat | default "Jan 2, 2006" }}
-<time datetime="{{ $dateTime }}">{{ .PublishDate.Format $dateFormat }}</time>
+<time datetime="{{ $dateTime }}">{{ .PublishDate | time.Format ":date_long" }}</time>
 {{ with .Params.tags }}
 <br />
-{{ range . }} {{ $href := print (relURL "tags/") (urlize .) }}
-<a href="{{ $href }}">{{ . }}</a>
+{{ range . }} {{ $href := print (relURL "tags/") (urlize .) }} {{ $ctx := dict "tag" . "href" $href }} {{ partial "tag.html" $ctx }}
+<!-- <a href="{{ $href }}">{{ . }}</a> -->
 {{ end }} {{ end }}

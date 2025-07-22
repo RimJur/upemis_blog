@@ -4,7 +4,7 @@ defaultContentLanguage = 'lt'
 
 [permalinks]
 post = '/:slug/'
-tags = '/tags/:slug/'
+tags = '/:slug/'
 
 [params]
 dateFormat = 'Jan 2, 2006'
@@ -32,7 +32,3 @@ weight = 2
 name = "Tinklaraštis"
 url = "/"
 weight = 3
-[[languages.lt.menu.main]]
-name = "Žymės"
-url = "/tags/"
-weight = 4
