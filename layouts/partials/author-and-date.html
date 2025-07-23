@@ -1,13 +1,5 @@
 <div class="author-line">
-    {{ if .Params.authors }}
-        {{ $path := printf "%s/%s" "authors" ((index .Params.authors 0) | urlize) }}
-        {{ with $.Site.GetPage $path }}
-        <a class="author-image-container" href="{{ .Params.link }}">
-            <img src="/tinklarastis/img/{{ $path }}.webp" alt="{{ .Params.name }} autoriaus nuotrauka" class="author-image" />
-            <span>{{ .Params.name }}</span>
-        </a>
-        {{ end }}
-    {{ end }}
+    {{ partial "author.html" $ }}
     {{ $dateTime := .PublishDate.Format "2006-01-02" }}
     <time
         datetime="{{ .PublishDate.Format "2006-01-02" }}"

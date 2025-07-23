@@ -2,8 +2,8 @@
 
 <h1>{{ .Title }}</h1>
 <div class="content-container">
-    {{ partial "date-and-tags.html" . }}
+    {{ partial "post-info.html" . }}
     <br /><br />
-    {{ .Content }}
+    <div class="prose dark:prose-invert lg:prose-lg mx-auto">{{ .Content }}</div>
 </div>
 {{ end }}

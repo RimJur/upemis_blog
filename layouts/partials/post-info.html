@@ -1,0 +1,12 @@
+<div class="flex items-center justify-center">
+    {{ partial "tags.html" $ }}
+</div>
+
+<br>
+
+{{ $dateTime := .PublishDate.Format "2006-01-02" }}
+<div class="flex items-center justify-center">
+    <time datetime="{{ $dateTime }}">{{ .PublishDate | time.Format ":date_long" }}</time>
+    , teksto autorius
+    <span class="ml-2">{{ partial "author.html" $ }}</span>
+</div>

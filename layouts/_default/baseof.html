@@ -1,7 +1,19 @@
 <!doctype html>
 <html lang="lt">
     {{ partial "head.html" . }}
-    <body>
-        {{ partial "nav.html" . }} {{ block "main" . }}{{ end }}
+    <body
+        x-data="{ theme: localStorage.getItem('theme') || 'light' }"
+        x-init="$watch('theme', val => {
+       		localStorage.setItem('theme', val);
+       		$el.classList.toggle('dark', val === 'dark');
+		});
+		"
+    >
+        <script>
+            // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+            document.body.classList.toggle("dark", localStorage.theme === "dark");
+        </script>
+        {{ partial "header.html" . }}
+        <main id="page">{{ block "main" . }}{{ end }}</main>
     </body>
 </html>

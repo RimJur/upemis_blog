@@ -1,0 +1,12 @@
+{{- $linkurl := .Destination | safeURL -}}
+{{- $relval := "" -}}
+{{- if and (strings.HasPrefix $linkurl "http") (not (strings.HasPrefix $linkurl "https://upemis.lt")) -}}
+    {{- $relval = "nofollow noopener noreferrer" -}}
+{{- end -}}
+<a href="{{ $linkurl }}"
+  {{- with .Title }} title="{{ . }}"{{ end -}}
+  {{- if $relval }} rel="{{ $relval }}"{{ end -}}
+>
+  {{- with .Text }}{{ . }}{{ end -}}
+</a>
+{{- /* chomp trailing newline */ -}}

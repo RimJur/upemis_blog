@@ -1,10 +1,12 @@
 <div class="tags-list">
-    {{ with .Params.tags }} {{ range . }} {{ $href := print (relURL "tags/") (urlize .) }}
-    {{ $ctx := dict 
-        "tag" . 
-        "href" $href
-    }}
-    {{ partial "tag.html" $ctx }}
-    <!-- <a href="{{ $href }}" class="tags-single">{{ . }}</a> -->
-    {{ end }} {{ end }}
+    {{ with .Params.tags }} 
+        {{ range . }} 
+            {{ $tagPage := $.Site.GetPage "tags" . }}
+            {{ $ctx := dict 
+                "tag" . 
+                "href" $tagPage.RelPermalink
+            }}
+            {{ partial "tag.html" $ctx }}
+        {{ end }} 
+    {{ end }}
 </div>

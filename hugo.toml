@@ -32,3 +32,8 @@ weight = 2
 name = "Tinklaraštis"
 url = "/"
 weight = 3
+
+[markup]
+[markup.goldmark]
+[markup.goldmark.renderer]
+unsafe = false
