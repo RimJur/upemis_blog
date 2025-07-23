@@ -1,9 +1,22 @@
-{{ if .Params.authors }}
-    {{ $path := printf "%s/%s" "authors" ((index .Params.authors 0) | urlize) }}
+<!-- {{ if .Params.autoriai }}
+    {{ $path := printf "%s/%s" "autoriai" ((index .Params.autoriai 0) | urlize) }}
     {{ with $.Site.GetPage $path }}
     <a class="author-image-container" href="{{ .Params.link }}">
-        <img src="/tinklarastis/img/{{ $path }}.webp" alt="{{ .Params.name }} autoriaus nuotrauka" class="author-image" />
-        <span>{{ .Params.name }}</span>
+        <img src="/tinklarastis/img/{{ $path }}.webp" alt="{{ .Params.title }} autoriaus nuotrauka" class="author-image" />
+        <span>{{ .Params.title }}</span>
     </a>
+    {{ end }}
+{{ end }} -->
+
+{{ if .Params.autoriai }}
+    {{ range .Params.autoriai }}
+        {{ $authorSlug := . | urlize }}
+        {{ $path := printf "autoriai/%s" $authorSlug }}
+        {{ with $.Site.GetPage $path }}
+            <a class="author-image-container" href="{{ .Permalink }}">
+                <img src="/tinklarastis/img/autoriai/{{ $authorSlug }}.webp" alt="{{ .Title }} autoriaus nuotrauka" class="author-image" />
+                <span>{{ .Title }}</span>
+            </a>
+        {{ end }}
     {{ end }}
 {{ end }}

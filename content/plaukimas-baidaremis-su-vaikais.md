@@ -4,8 +4,8 @@ date: 2024-02-21T20:12:54+00:00
 description: Plaukimas baidarėmis yra labai mėgstamas vaikų. Tokiai kelionei vertėtų tinkamai pasiruošti, tad šiame straipsnyje paruošėme visą aktualią informaciją.
 image: images/thumbnails/vaikais.jpg
 caption: Placeholder
-tags: ["vaikai"]
-authors: ["Rimgaudas Jurgaitis"]
+zymes: ["vaikai"]
+autoriai: ["Rimgaudas Jurgaitis"]
 draft: false
 ---
 

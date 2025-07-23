@@ -1,4 +1,4 @@
 +++
-name = 'Rimgaudas Jurgaitis'
+title = 'Rimgaudas Jurgaitis'
 link = 'https://upemis.lt/apie-mus'
 +++

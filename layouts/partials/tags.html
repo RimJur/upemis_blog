@@ -1,9 +1,9 @@
 <div class="tags-list">
-    {{ with .Params.tags }} 
+    {{ with .Params.zymes }} 
         {{ range . }} 
-            {{ $tagPage := $.Site.GetPage "tags" . }}
+            {{ $tagPage := $.Site.GetPage "zymes" . }}
             {{ $ctx := dict 
-                "tag" . 
+                "tag" ($tagPage.Title | default .) 
                 "href" $tagPage.RelPermalink
             }}
             {{ partial "tag.html" $ctx }}

@@ -4,8 +4,8 @@ date: 2024-03-01T20:04:43+00:00
 description: Ar žinojote, jog baidarių nuomos kainos ganėtinai nemažai skiriasi. Šiame tyrime apžvelgiame didžiausių nuomotojų kainas ir jas palyginame tarp upių ir regionų.
 image: images/thumbnails/kaina-2024.webp
 # caption: Placeholder
-tags: ["kainos"]
-authors: ["Rimgaudas Jurgaitis"]
+zymes: ["kainos"]
+autoriai: ["Rimgaudas Jurgaitis"]
 draft: false
 ---
 

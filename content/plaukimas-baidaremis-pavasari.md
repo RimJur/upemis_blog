@@ -4,8 +4,8 @@ date: 2024-02-21T20:15:06+00:00
 description: Prabudus gamtai, noras praleisti laisvalaikį prie vandens padidėja. Šiame straipsnyje apžvelgiame svarbiausias temas, svarbias plaukimui baidarėmis pavasarį.
 image: images/thumbnails/pavasari.jpg
 # caption: Placeholder
-tags: ["pavasaris"]
-authors: ["Rimgaudas Jurgaitis"]
+zymes: ["pavasaris"]
+autoriai: ["Rimgaudas Jurgaitis"]
 draft: false
 ---
 
@@ -63,8 +63,9 @@ Tikrai daug pavasarinių upių turime Aukštaitijoje. Čia galima plaukti tarp g
 
 ![Pavasarinės žemaitijos upės](/tinklarastis/img/Pavasari/4.png)
 
-Žemaičių aukštuma sukuria išskirtines galimybes pavasarį upėms tapti panašiomis į kalnų upes. Jos dažniausiai tokia galimybe ir pasinaudoja. Vienos iš ekstremaliausių yra šios, po brūkšnelio seka vidutinis upės nuolydis: 
-- **[Žvelsa](https://upemis.lt/upes/zvelsa)** \- 2,61 m/km 
+Žemaičių aukštuma sukuria išskirtines galimybes pavasarį upėms tapti panašiomis į kalnų upes. Jos dažniausiai tokia galimybe ir pasinaudoja. Vienos iš ekstremaliausių yra šios, po brūkšnelio seka vidutinis upės nuolydis:
+
+- **[Žvelsa](https://upemis.lt/upes/zvelsa)** \- 2,61 m/km
 - **[Aitra](https://upemis.lt/upes/aitra)** \- 2,42 m/km
 - **[Akmena](https://upemis.lt/upes/akmena)** \- 1,86 m/km
 - **[Lokysta](https://upemis.lt/upes/lokysta)** \- 1,83 m/km

@@ -4,8 +4,8 @@ date: 2024-03-16T09:51:18+00:00
 description: Ar žinote kokia ekstremaliausia Lietuvos upė? Daugeliui šie žodžiai Lietuvos upėms net nesiderina, tačiau šiame straipsnyje pasakojame apie šią mažai žinomą perlą.
 image: images/thumbnails/ekstremalu.png
 # caption: Placeholder
-tags: ["ekstremalu", "pavasaris", "zvelsa"]
-authors: ["Rimgaudas Jurgaitis"]
+zymes: ["ekstremalu", "pavasaris", "zvelsa"]
+autoriai: ["Rimgaudas Jurgaitis"]
 draft: false
 ---
 

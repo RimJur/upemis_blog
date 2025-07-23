@@ -4,15 +4,16 @@ defaultContentLanguage = 'lt'
 
 [permalinks]
 post = '/:slug/'
-tags = '/:slug/'
+zymes = '/:slug'
+autoriai = '/:slug/'
 
 [params]
 dateFormat = 'Jan 2, 2006'
 homeText = 'Viskas, kas susiję su baidarėmis, upėmis, keliavimu ir aktyviu laisvalaikiu.'
 
 [taxonomies]
-tag = 'tags'
-author = 'authors'
+tag = 'zymes'
+author = 'autoriai'
 
 [languages]
 [languages.lt]

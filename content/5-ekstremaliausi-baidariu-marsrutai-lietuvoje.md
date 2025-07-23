@@ -4,8 +4,8 @@ date: 2024-03-01T19:00:00+00:00
 description: Plačiai paplitęs mitas, jog Lietuvoje neturime ektremalių upių. Šiame straipsnyje pamatysite, jog pavasasį adrenalino gauni tikrai įmanoma.
 image: images/5_eks/TOP5.jpg
 # caption: Plačiai paplitęs mitas, jog Lietuvoje neturime ektremalių upių. Šiame straipsnyje pamatysite, jog pavasasį adrenalino gauni tikrai įmanoma.
-tags: ["ekstremalu", "pavasaris"]
-authors: ["Rimgaudas Jurgaitis"]
+zymes: ["ekstremalu", "pavasaris"]
+autoriai: ["Rimgaudas Jurgaitis"]
 draft: false
 ---
 

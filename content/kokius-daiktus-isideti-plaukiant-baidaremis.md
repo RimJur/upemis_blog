@@ -4,8 +4,8 @@ date: 2024-02-21T20:20:19+00:00
 description: Prieš plaukimą baidarėmis visiems kylą klausimų ką įsidėti, kas svarbu, o ko, galbūt, imti nereikėtų. Šiame straipsnyje apžvelgiame rekomenduojamą daiktų sąrašą įvairiems plaukimo trukmėmis.
 image: images/thumbnails/daiktai.png
 # caption: Placeholder
-tags: ["inventorius"]
-authors: ["Rimgaudas Jurgaitis"]
+zymes: ["inventorius"]
+autoriai: ["Rimgaudas Jurgaitis"]
 draft: false
 ---
 

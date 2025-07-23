@@ -4,8 +4,8 @@ date: 2024-02-29T20:07:38+00:00
 description: Plaukimas baidarėmis yra ne tik socialinė veikla, bet taip pat ir sportas. Šiame straipsnyje apibendrinome plaukimo baidarėmis naudą.
 image: images/thumbnails/sveikata.jpg
 # caption: Placeholder
-tags: ["sveikata"]
-authors: ["Rimgaudas Jurgaitis"]
+zymes: ["sveikata"]
+autoriai: ["Rimgaudas Jurgaitis"]
 draft: false
 ---
 
