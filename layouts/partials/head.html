@@ -91,11 +91,11 @@
     <meta name="msapplication-config" content="/browserconfig.xml" />
     <meta name="theme-color" content="#e2e4ff" />
 
-    {{ $js := "js/main.js" | relURL }}
-    <script src="{{ $js }}"></script>
-
     {{ $drawerJs := "js/drawer.min.js" | relURL }}
     <script src="{{ $drawerJs }}"></script>
+
+    <!-- Theme manager -->
+    <script defer scr="https://upemis.lt/static/js/theme-manager.js"></script>
 
     <!-- Alpine.js -->
     <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.14.1/dist/cdn.min.js"></script>
