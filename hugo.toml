@@ -34,6 +34,11 @@ name = "Tinklaraštis"
 url = "/"
 weight = 3
 
+[frontmatter]
+  date = ['date', 'publishDate']
+  lastmod = ['lastmod', 'date']
+  publishDate = ['publishDate', 'date']
+
 [markup]
 [markup.goldmark]
 [markup.goldmark.renderer]

@@ -4,9 +4,14 @@
 
 <br>
 
-{{ $dateTime := .PublishDate.Format "2006-01-02" }}
-<div class="flex items-center justify-center">
-    <time datetime="{{ $dateTime }}">{{ .PublishDate | time.Format ":date_long" }}</time>
-    , teksto autorius
-    <span class="ml-2">{{ partial "author.html" $ }}</span>
+<div class="post-meta">
+    {{- if and .Lastmod (gt .Lastmod.Unix .PublishDate.Unix) -}}
+    <span>Atnaujinta <time datetime="{{ .Lastmod.Format "2006-01-02" }}">{{ .Lastmod | time.Format ":date_long" }}</time></span>
+    <span class="author-separator">·</span>
+    <span class="original-date">Paskelbta <time datetime="{{ .PublishDate.Format "2006-01-02" }}">{{ .PublishDate | time.Format ":date_long" }}</time></span>
+    {{- else -}}
+    <time datetime="{{ .PublishDate.Format "2006-01-02" }}">{{ .PublishDate | time.Format ":date_long" }}</time>
+    {{- end }}
+    <span class="author-separator">·</span>
+    <span class="author-credit">Autorius: {{ partial "author.html" $ }}</span>
 </div>

@@ -1,6 +1,7 @@
 ---
 title: "5 Ekstremaliausi Baidarių Maršrutai Lietuvoje"
 date: 2024-03-01T19:00:00+00:00
+lastmod: 2026-01-21T14:00:00+00:00
 description: Plačiai paplitęs mitas, jog Lietuvoje neturime ektremalių upių. Šiame straipsnyje pamatysite, jog pavasasį adrenalino gauni tikrai įmanoma.
 image: images/5_eks/TOP5.jpg
 # caption: Plačiai paplitęs mitas, jog Lietuvoje neturime ektremalių upių. Šiame straipsnyje pamatysite, jog pavasasį adrenalino gauni tikrai įmanoma.

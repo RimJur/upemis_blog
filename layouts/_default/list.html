@@ -1,14 +1,149 @@
 {{ define "main" }}
 
-<h1>{{ .Title }}</h1>
-<div class="posts-list">
-    {{ range .Pages.ByPublishDate.Reverse }}
-    <div class="posts-single">
-        {{ partial "tags.html" . }}
-        <h2><a href="{{ .RelPermalink }}" class="primary-heading">{{ .Title }}</a></h2>
-        <!-- Description TODO -->
-        {{ partial "author-and-date.html" . }}
+{{- if eq .Kind "term" }}
+<!-- Term Page Header (Tags, Authors, etc.) -->
+<div class="term-header">
+    <a href="{{ .Site.BaseURL }}" class="term-back-link">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Visi straipsniai
+    </a>
+    <div class="term-badge">
+        {{- if eq .Data.Singular "zyme" }}
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+            <line x1="7" y1="7" x2="7.01" y2="7"></line>
+        </svg>
+        {{- else if eq .Data.Singular "autorius" }}
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+        {{- else }}
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+            <line x1="7" y1="7" x2="7.01" y2="7"></line>
+        </svg>
+        {{- end }}
     </div>
+    <h1 class="term-title">{{ .Title }}</h1>
+    {{- with .Description }}
+    <p class="term-description">{{ . }}</p>
+    {{- end }}
+    <div class="term-count">{{ len .Pages }} {{ if eq (len .Pages) 1 }}straipsnis{{ else if le (len .Pages) 9 }}straipsniai{{ else }}straipsnių{{ end }}</div>
+</div>
+{{- else if eq .Kind "taxonomy" }}
+<!-- Taxonomy List Header (All tags, All authors) -->
+<div class="term-header">
+    <a href="{{ .Site.BaseURL }}" class="term-back-link">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Visi straipsniai
+    </a>
+    <h1 class="term-title">{{ .Title }}</h1>
+</div>
+{{- else }}
+<!-- Hero Section - Main Blog Page -->
+<div class="blog-hero">
+    <div class="blog-hero-badge">
+        <span>Nuotykiai prasideda čia 🚣‍♀️</span>
+    </div>
+    <h1 class="blog-hero-title">
+        Upemis.lt <span class="blog-hero-highlight">
+            tinklaraštis
+            <svg class="blog-hero-underline" viewBox="0 0 200 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2.00025 6.99997C25.7501 9.75001 59.6588 11.5 89.6666 6.99997C119.674 2.50002 138.667 0.999993 166.667 3.99998C194.667 7 197.667 5.49997 197.667 5.49997" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+        </span>
+    </h1>
+    <p class="blog-hero-description">
+        Atraskite gražiausius Lietuvos kampelius plaukiant baidarėmis. Maršrutai, patarimai ir istorijos, kurios įkvepia judėti.
+    </p>
+</div>
+{{- end }}
+
+<!-- Blog Grid -->
+<div class="posts-list">
+    {{ range $index, $page := .Pages.ByPublishDate.Reverse }}
+    <article class="blog-card group">
+        <!-- Gradient Header -->
+        <div class="blog-card-header" data-index="{{ $index }}">
+            <!-- Decorative Circles -->
+            <div class="blog-card-circle-1"></div>
+            <div class="blog-card-circle-2"></div>
+
+            <!-- Tags -->
+            <div class="blog-card-tags">
+                {{ range .Params.zymes }}
+                {{ $tagPage := $.Site.GetPage "zymes" . }}
+                <a href="{{ $tagPage.RelPermalink }}" class="blog-card-tag">{{ $tagPage.Title | default . }}</a>
+                {{ end }}
+            </div>
+        </div>
+
+        <!-- Card Content -->
+        <div class="blog-card-content">
+            <!-- Date Info - Show most recent date -->
+            <div class="blog-card-date">
+                <span class="blog-card-date-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                    </svg>
+                    {{- if and .Lastmod (gt .Lastmod.Unix .PublishDate.Unix) }}
+                    Atnaujinta {{ .Lastmod | time.Format ":date_long" }}
+                    {{- else }}
+                    {{ .PublishDate | time.Format ":date_long" }}
+                    {{- end }}
+                </span>
+            </div>
+
+            <!-- Title -->
+            <h4 class="blog-card-title">
+                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            </h4>
+
+            <!-- Excerpt -->
+            <p class="blog-card-excerpt">
+                {{ with .Description }}{{ . }}{{ else }}{{ .Summary | plainify | truncate 120 }}{{ end }}
+            </p>
+
+            <!-- Spacer -->
+            <div class="flex-grow"></div>
+
+            <!-- Author Footer -->
+            <div class="blog-card-footer">
+                {{ if .Params.autoriai }}
+                {{ $authorName := index .Params.autoriai 0 }}
+                {{ $authorSlug := $authorName | urlize }}
+                {{ $authorPage := $.Site.GetPage "autoriai" $authorName }}
+                <a href="{{ $authorPage.RelPermalink }}" class="blog-card-author">
+                    <div class="blog-card-avatar">
+                        <img src="/tinklarastis/img/autoriai/{{ $authorSlug }}.webp" alt="{{ $authorName }}" />
+                        <div class="blog-card-verified">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+                    <span class="blog-card-author-name">{{ index (split $authorName " ") 0 }}</span>
+                </a>
+                {{ end }}
+                <a href="{{ .RelPermalink }}" class="blog-card-arrow" aria-label="Skaityti straipsnį">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </article>
     {{ end }}
 </div>
 {{ end }}

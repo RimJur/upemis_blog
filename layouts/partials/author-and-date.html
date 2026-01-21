@@ -1,8 +1,13 @@
-<div class="author-line">
+<div class="post-card-meta">
     {{ partial "author.html" $ }}
-    {{ $dateTime := .PublishDate.Format "2006-01-02" }}
-    <time
-        datetime="{{ .PublishDate.Format "2006-01-02" }}"
-        style="padding-left: 0.6rem;"
-    >{{ .PublishDate | time.Format ":date_long" }}</time>
+    <div class="post-card-dates">
+        <time datetime="{{ .PublishDate.Format "2006-01-02" }}">
+            {{- .PublishDate | time.Format ":date_long" -}}
+        </time>
+        {{- if and .Lastmod (gt .Lastmod.Unix .PublishDate.Unix) }}
+        <span class="post-card-updated">
+            Atnaujinta: <time datetime="{{ .Lastmod.Format "2006-01-02" }}">{{ .Lastmod | time.Format ":date_long" }}</time>
+        </span>
+        {{- end }}
+    </div>
 </div>
