@@ -1,33 +1,3 @@
-@import "tailwindcss" source("../..");
-@plugin "@tailwindcss/typography";
-
-@theme inline {
-    --color-border: var(--border);
-    --color-input: var(--input);
-    --color-background: var(--background);
-    --color-foreground: var(--foreground);
-    --color-primary: var(--primary);
-    --color-primary-foreground: var(--primary-foreground);
-    --color-secondary: var(--secondary);
-    --color-secondary-foreground: var(--secondary-foreground);
-    --color-destructive: var(--destructive);
-    --color-destructive-foreground: var(--destructive-foreground);
-    --color-muted: var(--muted);
-    --color-muted-foreground: var(--muted-foreground);
-    --color-accent: var(--accent);
-    --color-accent-foreground: var(--accent-foreground);
-    --color-popover: var(--popover);
-    --color-popover-foreground: var(--popover-foreground);
-    --color-card: var(--card);
-    --color-card-foreground: var(--card-foreground);
-    --color-ring: var(--ring);
-
-    --radius-sm: calc(var(--radius) - 4px);
-    --radius-md: calc(var(--radius) - 2px);
-    --radius-lg: var(--radius);
-    --radius-xl: calc(var(--radius) + 4px);
-}
-
 /* Light Mode - OKLCH Colors matching main site */
 :root {
     --background: oklch(1 0 0);
@@ -868,16 +838,6 @@ li {
 }
 
 /* Excerpt */
-.blog-card-excerpt {
-    color: var(--muted-foreground);
-    font-size: 0.875rem;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-}
 
 /* Footer */
 .blog-card-footer {
