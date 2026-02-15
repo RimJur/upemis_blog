@@ -1,6 +1,7 @@
 ---
 title: "9 Priežastys, Kodėl Plaukimas Baidarėmis yra Naudingas Jūsų Sveikatai"
-date: 2026-02-15T10:30:00+02:00
+date: 2024-03-01T19:00:00+00:00
+lastmod: 2026-02-15T10:30:00+02:00
 description: Plaukimas baidarėmis yra ne tik socialinė veikla, bet taip pat ir sportas. Šiame straipsnyje apibendrinome plaukimo baidarėmis naudą.
 image: images/thumbnails/sveikata.jpg
 # caption: Placeholder

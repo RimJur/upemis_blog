@@ -1,6 +1,7 @@
 ---
 title: "Plaukimas Baidarėmis Pavasarį"
-date: 2026-02-15T10:00:00+02:00
+date: 2024-03-01T19:00:00+00:00
+lastmod: 2026-02-15T10:00:00+02:00
 description: Prabudus gamtai, noras praleisti laisvalaikį prie vandens padidėja. Šiame straipsnyje apžvelgiame pavasarinio plaukimo baidarėmis išskirtinumus, rekomenduojamas upes ir patarimus saugiam plaukimui.
 image: images/thumbnails/pavasari.jpg
 # caption: Placeholder
