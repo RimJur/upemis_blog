@@ -1,3 +1,5 @@
+@import "tailwindcss" source("../../");
+
 /* Light Mode - OKLCH Colors matching main site */
 :root {
     --background: oklch(1 0 0);
