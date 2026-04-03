@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 @import "tailwindcss" source("../../");
+=======
+@import "../../../internal/web/static/css/output-min.css";
+>>>>>>> 6d0deb2 (tail output is now linked with other css file)
 
 /* Light Mode - OKLCH Colors matching main site */
 :root {
@@ -101,7 +105,9 @@
     }
 
     body {
-        font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+        font-family:
+            ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+            "Segoe UI Emoji";
         color: var(--foreground);
         background-color: var(--background);
         padding: 0;
@@ -557,7 +563,8 @@ blockquote {
 
 /* Code styling */
 code {
-    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+    font-family:
+        ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
     font-size: 0.875em;
     background: var(--muted);
     padding: 0.125rem 0.375rem;
@@ -611,7 +618,8 @@ li {
 
 .blog-card:hover {
     transform: translateY(-0.5rem);
-    box-shadow: 0 25px 50px -12px color-mix(in oklch, var(--primary) 15%, transparent);
+    box-shadow: 0 25px 50px -12px
+        color-mix(in oklch, var(--primary) 15%, transparent);
 }
 
 /* Gradient Header */
@@ -646,74 +654,206 @@ li {
 /* Aurora/Mesh gradient colors based on index */
 .blog-card-header[data-index="0"] {
     background:
-        radial-gradient(ellipse 80% 50% at 20% 40%, oklch(0.6 0.25 280) 0%, transparent 70%),
-        radial-gradient(ellipse 60% 80% at 80% 20%, oklch(0.55 0.22 230) 0%, transparent 60%),
-        radial-gradient(ellipse 70% 60% at 60% 90%, oklch(0.5 0.2 260) 0%, transparent 50%),
-        linear-gradient(160deg, oklch(0.45 0.18 270) 0%, oklch(0.35 0.2 250) 100%);
+        radial-gradient(
+            ellipse 80% 50% at 20% 40%,
+            oklch(0.6 0.25 280) 0%,
+            transparent 70%
+        ),
+        radial-gradient(
+            ellipse 60% 80% at 80% 20%,
+            oklch(0.55 0.22 230) 0%,
+            transparent 60%
+        ),
+        radial-gradient(
+            ellipse 70% 60% at 60% 90%,
+            oklch(0.5 0.2 260) 0%,
+            transparent 50%
+        ),
+        linear-gradient(
+            160deg,
+            oklch(0.45 0.18 270) 0%,
+            oklch(0.35 0.2 250) 100%
+        );
 }
 
 .blog-card-header[data-index="1"] {
     background:
-        radial-gradient(ellipse 70% 60% at 10% 80%, oklch(0.55 0.2 170) 0%, transparent 60%),
-        radial-gradient(ellipse 80% 50% at 90% 30%, oklch(0.6 0.18 140) 0%, transparent 70%),
-        radial-gradient(ellipse 50% 70% at 50% 10%, oklch(0.5 0.15 160) 0%, transparent 50%),
-        linear-gradient(140deg, oklch(0.45 0.16 155) 0%, oklch(0.4 0.18 175) 100%);
+        radial-gradient(
+            ellipse 70% 60% at 10% 80%,
+            oklch(0.55 0.2 170) 0%,
+            transparent 60%
+        ),
+        radial-gradient(
+            ellipse 80% 50% at 90% 30%,
+            oklch(0.6 0.18 140) 0%,
+            transparent 70%
+        ),
+        radial-gradient(
+            ellipse 50% 70% at 50% 10%,
+            oklch(0.5 0.15 160) 0%,
+            transparent 50%
+        ),
+        linear-gradient(
+            140deg,
+            oklch(0.45 0.16 155) 0%,
+            oklch(0.4 0.18 175) 100%
+        );
 }
 
 .blog-card-header[data-index="2"] {
     background:
-        radial-gradient(ellipse 60% 80% at 80% 70%, oklch(0.7 0.22 50) 0%, transparent 60%),
-        radial-gradient(ellipse 80% 50% at 20% 20%, oklch(0.65 0.25 30) 0%, transparent 70%),
-        radial-gradient(ellipse 70% 60% at 50% 50%, oklch(0.6 0.2 15) 0%, transparent 50%),
+        radial-gradient(
+            ellipse 60% 80% at 80% 70%,
+            oklch(0.7 0.22 50) 0%,
+            transparent 60%
+        ),
+        radial-gradient(
+            ellipse 80% 50% at 20% 20%,
+            oklch(0.65 0.25 30) 0%,
+            transparent 70%
+        ),
+        radial-gradient(
+            ellipse 70% 60% at 50% 50%,
+            oklch(0.6 0.2 15) 0%,
+            transparent 50%
+        ),
         linear-gradient(170deg, oklch(0.55 0.2 40) 0%, oklch(0.5 0.22 25) 100%);
 }
 
 .blog-card-header[data-index="3"] {
     background:
-        radial-gradient(ellipse 70% 70% at 20% 20%, oklch(0.55 0.25 320) 0%, transparent 60%),
-        radial-gradient(ellipse 60% 80% at 80% 80%, oklch(0.5 0.22 290) 0%, transparent 70%),
-        radial-gradient(ellipse 80% 50% at 60% 30%, oklch(0.45 0.2 305) 0%, transparent 50%),
-        linear-gradient(130deg, oklch(0.4 0.2 300) 0%, oklch(0.35 0.22 280) 100%);
+        radial-gradient(
+            ellipse 70% 70% at 20% 20%,
+            oklch(0.55 0.25 320) 0%,
+            transparent 60%
+        ),
+        radial-gradient(
+            ellipse 60% 80% at 80% 80%,
+            oklch(0.5 0.22 290) 0%,
+            transparent 70%
+        ),
+        radial-gradient(
+            ellipse 80% 50% at 60% 30%,
+            oklch(0.45 0.2 305) 0%,
+            transparent 50%
+        ),
+        linear-gradient(
+            130deg,
+            oklch(0.4 0.2 300) 0%,
+            oklch(0.35 0.22 280) 100%
+        );
 }
 
 .blog-card-header[data-index="4"] {
     background:
-        radial-gradient(ellipse 80% 60% at 10% 40%, oklch(0.6 0.2 200) 0%, transparent 70%),
-        radial-gradient(ellipse 60% 70% at 90% 70%, oklch(0.55 0.22 220) 0%, transparent 60%),
-        radial-gradient(ellipse 70% 50% at 40% 10%, oklch(0.5 0.18 190) 0%, transparent 50%),
-        linear-gradient(150deg, oklch(0.45 0.18 210) 0%, oklch(0.4 0.2 195) 100%);
+        radial-gradient(
+            ellipse 80% 60% at 10% 40%,
+            oklch(0.6 0.2 200) 0%,
+            transparent 70%
+        ),
+        radial-gradient(
+            ellipse 60% 70% at 90% 70%,
+            oklch(0.55 0.22 220) 0%,
+            transparent 60%
+        ),
+        radial-gradient(
+            ellipse 70% 50% at 40% 10%,
+            oklch(0.5 0.18 190) 0%,
+            transparent 50%
+        ),
+        linear-gradient(
+            150deg,
+            oklch(0.45 0.18 210) 0%,
+            oklch(0.4 0.2 195) 100%
+        );
 }
 
 .blog-card-header[data-index="5"] {
     background:
-        radial-gradient(ellipse 70% 80% at 80% 20%, oklch(0.65 0.22 85) 0%, transparent 60%),
-        radial-gradient(ellipse 60% 60% at 20% 70%, oklch(0.6 0.25 65) 0%, transparent 70%),
-        radial-gradient(ellipse 80% 50% at 50% 50%, oklch(0.55 0.2 75) 0%, transparent 50%),
+        radial-gradient(
+            ellipse 70% 80% at 80% 20%,
+            oklch(0.65 0.22 85) 0%,
+            transparent 60%
+        ),
+        radial-gradient(
+            ellipse 60% 60% at 20% 70%,
+            oklch(0.6 0.25 65) 0%,
+            transparent 70%
+        ),
+        radial-gradient(
+            ellipse 80% 50% at 50% 50%,
+            oklch(0.55 0.2 75) 0%,
+            transparent 50%
+        ),
         linear-gradient(160deg, oklch(0.5 0.2 80) 0%, oklch(0.45 0.22 60) 100%);
 }
 
 .blog-card-header[data-index="6"] {
     background:
-        radial-gradient(ellipse 60% 70% at 30% 80%, oklch(0.55 0.2 120) 0%, transparent 60%),
-        radial-gradient(ellipse 80% 50% at 70% 20%, oklch(0.6 0.22 100) 0%, transparent 70%),
-        radial-gradient(ellipse 70% 60% at 10% 30%, oklch(0.5 0.18 140) 0%, transparent 50%),
-        linear-gradient(145deg, oklch(0.45 0.18 115) 0%, oklch(0.4 0.2 130) 100%);
+        radial-gradient(
+            ellipse 60% 70% at 30% 80%,
+            oklch(0.55 0.2 120) 0%,
+            transparent 60%
+        ),
+        radial-gradient(
+            ellipse 80% 50% at 70% 20%,
+            oklch(0.6 0.22 100) 0%,
+            transparent 70%
+        ),
+        radial-gradient(
+            ellipse 70% 60% at 10% 30%,
+            oklch(0.5 0.18 140) 0%,
+            transparent 50%
+        ),
+        linear-gradient(
+            145deg,
+            oklch(0.45 0.18 115) 0%,
+            oklch(0.4 0.2 130) 100%
+        );
 }
 
 .blog-card-header[data-index="7"] {
     background:
-        radial-gradient(ellipse 80% 60% at 20% 10%, oklch(0.5 0.2 350) 0%, transparent 70%),
-        radial-gradient(ellipse 60% 80% at 80% 60%, oklch(0.55 0.22 10) 0%, transparent 60%),
-        radial-gradient(ellipse 70% 50% at 50% 90%, oklch(0.45 0.25 340) 0%, transparent 50%),
+        radial-gradient(
+            ellipse 80% 60% at 20% 10%,
+            oklch(0.5 0.2 350) 0%,
+            transparent 70%
+        ),
+        radial-gradient(
+            ellipse 60% 80% at 80% 60%,
+            oklch(0.55 0.22 10) 0%,
+            transparent 60%
+        ),
+        radial-gradient(
+            ellipse 70% 50% at 50% 90%,
+            oklch(0.45 0.25 340) 0%,
+            transparent 50%
+        ),
         linear-gradient(135deg, oklch(0.4 0.2 355) 0%, oklch(0.35 0.22 5) 100%);
 }
 
 .blog-card-header[data-index="8"] {
     background:
-        radial-gradient(ellipse 70% 70% at 90% 40%, oklch(0.6 0.18 240) 0%, transparent 60%),
-        radial-gradient(ellipse 60% 60% at 10% 80%, oklch(0.55 0.2 260) 0%, transparent 70%),
-        radial-gradient(ellipse 80% 50% at 40% 20%, oklch(0.5 0.22 220) 0%, transparent 50%),
-        linear-gradient(155deg, oklch(0.45 0.18 245) 0%, oklch(0.4 0.2 230) 100%);
+        radial-gradient(
+            ellipse 70% 70% at 90% 40%,
+            oklch(0.6 0.18 240) 0%,
+            transparent 60%
+        ),
+        radial-gradient(
+            ellipse 60% 60% at 10% 80%,
+            oklch(0.55 0.2 260) 0%,
+            transparent 70%
+        ),
+        radial-gradient(
+            ellipse 80% 50% at 40% 20%,
+            oklch(0.5 0.22 220) 0%,
+            transparent 50%
+        ),
+        linear-gradient(
+            155deg,
+            oklch(0.45 0.18 245) 0%,
+            oklch(0.4 0.2 230) 100%
+        );
 }
 
 /* Decorative circles */
