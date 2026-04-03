@@ -1,13 +1,18 @@
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    {{ hugo.Generator }} {{ $css := "css/tail-output.min.css" | relURL }}
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    {{ hugo.Generator }} {{ $css := "css/tail-output.min.css?v=0.1" | relURL }}
     <link rel="stylesheet" href="{{ $css }}" />
     <script>
         // Inline theme initialization to prevent FOUC
         (function () {
             const STORAGE_KEY = "theme-preference";
-            const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+            const mediaQuery = window.matchMedia(
+                "(prefers-color-scheme: dark)",
+            );
 
             function getStoredTheme() {
                 try {
@@ -43,21 +48,39 @@
                         var o = e.split(".");
                         (2 == o.length && ((t = t[o[0]]), (e = o[1])),
                             (t[e] = function () {
-                                t.push([e].concat(Array.prototype.slice.call(arguments, 0)));
+                                t.push(
+                                    [e].concat(
+                                        Array.prototype.slice.call(
+                                            arguments,
+                                            0,
+                                        ),
+                                    ),
+                                );
                             }));
                     }
                     (((p = t.createElement("script")).type = "text/javascript"),
                         (p.crossOrigin = "anonymous"),
                         (p.async = !0),
-                        (p.src = s.api_host.replace(".i.posthog.com", "-assets.i.posthog.com") + "/static/array.js"),
-                        (r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(p, r));
+                        (p.src =
+                            s.api_host.replace(
+                                ".i.posthog.com",
+                                "-assets.i.posthog.com",
+                            ) + "/static/array.js"),
+                        (r =
+                            t.getElementsByTagName(
+                                "script",
+                            )[0]).parentNode.insertBefore(p, r));
                     var u = e;
                     for (
                         void 0 !== a ? (u = e[a] = []) : (a = "posthog"),
                             u.people = u.people || [],
                             u.toString = function (t) {
                                 var e = "posthog";
-                                return ("posthog" !== a && (e += "." + a), t || (e += " (stub)"), e);
+                                return (
+                                    "posthog" !== a && (e += "." + a),
+                                    t || (e += " (stub)"),
+                                    e
+                                );
                             },
                             u.people.toString = function () {
                                 return u.toString(1) + ".people (stub)";
@@ -97,48 +120,49 @@
     <!-- Theme manager -->
     <script defer src="https://upemis.lt/static/js/theme-manager.js"></script>
 
-    {{ $title := print .Title " | " .Site.Title }} {{ if .IsHome }}{{ $title := .Site.Title }}{{ end }}
+    {{ $title := print .Title " | " .Site.Title }} {{ if .IsHome }}{{ $title :=
+    .Site.Title }}{{ end }}
     <title>{{ $title }}</title>
 
-    {{/* Schema.org structured data for articles */}}
-    {{ if and .IsPage (not .IsHome) }}
+    {{/* Schema.org structured data for articles */}} {{ if and .IsPage (not
+    .IsHome) }}
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": {{ .Title | jsonify }},
-        "description": {{ with .Description }}{{ . | jsonify }}{{ else }}{{ .Summary | plainify | truncate 160 | jsonify }}{{ end }},
-        "datePublished": "{{ .PublishDate.Format "2006-01-02T15:04:05Z07:00" }}",
-        "dateModified": "{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}",
-        "url": "{{ .Permalink }}",
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "{{ .Permalink }}"
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Upemis.lt",
-            "url": "https://upemis.lt",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://upemis.lt/assets/logo_long.svg"
+        {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": {{ .Title | jsonify }},
+            "description": {{ with .Description }}{{ . | jsonify }}{{ else }}{{ .Summary | plainify | truncate 160 | jsonify }}{{ end }},
+            "datePublished": "{{ .PublishDate.Format "2006-01-02T15:04:05Z07:00" }}",
+            "dateModified": "{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}",
+            "url": "{{ .Permalink }}",
+            "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "{{ .Permalink }}"
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "Upemis.lt",
+                "url": "https://upemis.lt",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://upemis.lt/assets/logo_long.svg"
+                }
             }
-        }
-        {{- if .Params.autoriai -}}
-        ,"author": [
-            {{- range $i, $author := .Params.autoriai -}}
-            {{- if $i }},{{ end -}}
-            {
-                "@type": "Person",
-                "name": {{ $author | jsonify }}
-            }
+            {{- if .Params.autoriai -}}
+            ,"author": [
+                {{- range $i, $author := .Params.autoriai -}}
+                {{- if $i }},{{ end -}}
+                {
+                    "@type": "Person",
+                    "name": {{ $author | jsonify }}
+                }
+                {{- end -}}
+            ]
             {{- end -}}
-        ]
-        {{- end -}}
-        {{- if .Params.image -}}
-        ,"image": "{{ .Params.image | absURL }}"
-        {{- end -}}
-    }
+            {{- if .Params.image -}}
+            ,"image": "{{ .Params.image | absURL }}"
+            {{- end -}}
+        }
     </script>
     {{ end }}
 </head>
